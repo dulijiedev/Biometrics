@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dolj.biometrics">
+
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <application>
+        <activity
+            android:name=".gesture.GestureSetAt"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/noActionBar" />
+        <activity
+            android:name=".gesture.GestureCheckAt"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/noActionBar" />
+    </application>
+</manifest>

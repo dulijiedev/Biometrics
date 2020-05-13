@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Biometrics</string>
+
+    <string name="forget_what">忘记密码|不知道干啥</string>
+</resources>
