@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Biometrics</string>
     <!--手势操作-->
     <string name="set_gesture_pwd">设置手势密码</string>
     <string name="drag_draw_icon">滑动绘制解锁图案</string>
@@ -31,4 +30,15 @@
 
     <string name="cancel">取消</string>
     <string name="password_login">密码登录</string>
+
+
+    <string name="biometric_dialog_cancel">取消</string>
+    <string name="biometric_dialog_title">指纹识别</string>
+    <string name="biometric_dialog_subtitle">Verify fingerprint to continue</string>
+    <string name="biometric_dialog_state_normal">请触摸指纹传感器</string>
+    <string name="biometric_dialog_state_failed">指纹认证失败，请再试一次!</string>
+    <string name="biometric_dialog_state_error">尝试次数过多，请稍后重试</string>
+    <string name="biometric_dialog_state_error_enable_process">Verification error, setup failed</string>
+    <string name="biometric_dialog_state_succeeded">认证成功!</string>
+    <string name="biometric_dialog_use_password">Use Password</string>
 </resources>

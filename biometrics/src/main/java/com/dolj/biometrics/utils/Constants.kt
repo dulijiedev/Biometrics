@@ -48,3 +48,15 @@ var themeColors: Int by DelegatesExt.preference(UIUtils.getContext(), THEME_COLO
 var gesturePwd: String by DelegatesExt.preference(UIUtils.getContext(), GESTURE_PASSWORD, "")
 
 var forgetText: String by DelegatesExt.preference(UIUtils.getContext(), FORGET_TEXT, "")
+
+const val DEFAULT_KEY_NAME = "default_key"
+
+const val FINGER_TITLE = "finger_title"
+const val FINGER_SUB_TITLE = "finger_subtitle"
+const val FINGER_DESC = "finger_desc"
+const val FINGER_NET_TEXT = "finger_negative_text"
+
+var fingerTitle: String by DelegatesExt.preference(UIUtils.getContext(), FINGER_TITLE, "")
+var fingerSubTitle: String by DelegatesExt.preference(UIUtils.getContext(), FINGER_SUB_TITLE, "")
+var fingerDesc: String by DelegatesExt.preference(UIUtils.getContext(), FINGER_DESC, "")
+var fingerNegativeText: String by DelegatesExt.preference(UIUtils.getContext(), FINGER_NET_TEXT, "")

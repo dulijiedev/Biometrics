@@ -72,7 +72,7 @@ class GestureCheckAt : AppCompatActivity(), LockPatternView.OnPatternListener {
                     gesturePwd = ""
                     window.setWindowAnimations(0)
                     //验证出错后跳转到
-                    BiometricsUtils.callbackEnter?.authBiometricFailed(resources.getString(R.string.check_error_over_time))
+                    BiometricsUtils.callbackEnter?.authBiometricFailed(-1,resources.getString(R.string.check_error_over_time))
                     finish()
                 }
             }
