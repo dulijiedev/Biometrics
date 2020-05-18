@@ -8,7 +8,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -36,39 +36,3 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
-//本地仓库
-//uploadArchives {
-//    repositories.mavenDeployer {
-//        // 配置本地仓库路径，项目根目录下的repository目录中
-//        repository(url: uri('../repository'))
-//        pom.groupId = "com.dolj.biometrics"
-//        pom.artifactId = "biometric"
-//        pom.version = "1.0.0"
-//    }
-//}
-
-//打包main目录下的代码和资源task
-task androidSourcesJar(type: Jar) {
-    classifier = 'sources'
-    from android.sourceSets.main.java.srcDirs
-}
-
-//配置需要上传到maven仓库的文件
-artifacts {
-    archives androidSourcesJar
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            //指定Maven仓库url
-            repository(url: "https://dwww.dcpay.vip/nexus/content/repositories/releases/") {
-                //nexus默认用户名密码
-                authentication(userName: "dev", password: "1qaz2wsx")
-            }
-            pom.groupId = "com.dolj.biometrics"
-            pom.artifactId = "biometric"
-            pom.version = "1.0.0"
-        }
-    }
-}
