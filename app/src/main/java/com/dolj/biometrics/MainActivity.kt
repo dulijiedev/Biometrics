@@ -15,15 +15,15 @@ class MainActivity : AppCompatActivity() {
         btnSet.setOnClickListener {
             BiometricsUtils.setBiometric(this, object : IBiometricJoin {
                 override fun cancelJoin() {
-                    Toast.makeText(this@MainActivity, "取消設置", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "取消设置", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun joinComplete() {
-                    Toast.makeText(this@MainActivity, "設置成功", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "设置成功", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun joinFailed() {
-                    Toast.makeText(this@MainActivity, "設置失敗", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "设置失敗", Toast.LENGTH_SHORT).show()
                 }
 
             })

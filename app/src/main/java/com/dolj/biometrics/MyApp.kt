@@ -19,7 +19,6 @@ class MyApp : Application() {
             .setErrorColor(resources.getColor(R.color.colorAccent))
             .setThemeColor(resources.getColor(R.color.colorPrimary))
             .setForgetText(resources.getString(R.string.forget_what))
-
             .setTitle("指纹识别")
             .setSubtitle("使用指纹登录XXX")
             .setDescripton("请使用指纹解锁快捷登录")
