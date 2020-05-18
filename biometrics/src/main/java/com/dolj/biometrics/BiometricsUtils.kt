@@ -76,48 +76,48 @@ class Biometrics(builder: Builder) {
 
     init {
 
-        if (builder.colorFontSecondary != null) {
-            fontSecondary = builder.colorFontSecondary as Int
+        if (builder.getFontSecondary() != null) {
+            fontSecondary = builder.getFontSecondary() as Int
         }
 
-        if (builder.colorBgPrimary != null) {
-            bgPrimary = builder.colorBgPrimary as Int
+        if (builder.getBgPrimary() != null) {
+            bgPrimary = builder.getBgPrimary() as Int
         }
 
-        if (builder.colorDefaultPattern != null) {
-            defaultPattern = builder.colorDefaultPattern as Int
+        if (builder.getDefaultColor() != null) {
+            defaultPattern = builder.getDefaultColor() as Int
         }
 
-        if (builder.colorSelectedPattern != null) {
-            selectedPattern = builder.colorSelectedPattern as Int
+        if (builder.getSelectedColor() != null) {
+            selectedPattern = builder.getSelectedColor() as Int
         }
 
-        if (builder.colorErrorPattern != null) {
-            errorPattern = builder.colorErrorPattern as Int
+        if (builder.getErrorColor() != null) {
+            errorPattern = builder.getErrorColor() as Int
         }
 
-        if (builder.colorThemeAccent != null) {
-            themeColors = builder.colorThemeAccent as Int
+        if (builder.getThemeColor() != null) {
+            themeColors = builder.getThemeColor() as Int
         }
 
-        if (builder.forgetText != null) {
-            forgetText = builder.forgetText as String
+        if (builder.getForgetText() != null) {
+            forgetText = builder.getForgetText() as String
         }
         /***********************************************/
-        if (builder.title != null) {
-            fingerTitle = builder.title as String
+        if (builder.getTitle() != null) {
+            fingerTitle = builder.getTitle() as String
         }
 
-        if (builder.subTitle != null) {
-            fingerSubTitle = builder.subTitle as String
+        if (builder.getSubtitle() != null) {
+            fingerSubTitle = builder.getSubtitle() as String
         }
 
-        if (builder.negativeText != null) {
-            fingerNegativeText = builder.negativeText as String
+        if (builder.getNegativeText() != null) {
+            fingerNegativeText = builder.getNegativeText() as String
         }
 
-        if (builder.description != null) {
-            fingerDesc = builder.description as String
+        if (builder.getDescripton() != null) {
+            fingerDesc = builder.getDescripton() as String
         }
     }
 
@@ -126,17 +126,21 @@ class Biometrics(builder: Builder) {
             UIUtils.init(context)
         }
 
-        var colorFontSecondary: Int? = null
-        var colorBgPrimary: Int? = null
-        var colorDefaultPattern: Int? = null
-        var colorSelectedPattern: Int? = null
-        var colorErrorPattern: Int? = null
-        var colorThemeAccent: Int? = null
-        var forgetText: String? = null
+        private var colorFontSecondary: Int? = null
+        private var colorBgPrimary: Int? = null
+        private var colorDefaultPattern: Int? = null
+        private var colorSelectedPattern: Int? = null
+        private var colorErrorPattern: Int? = null
+        private var colorThemeAccent: Int? = null
+        private var forgetText: String? = null
 
         fun setFontSecondary(color: Int): Builder {
             this.colorFontSecondary = color
             return this
+        }
+
+        fun getFontSecondary(): Int? {
+            return colorFontSecondary
         }
 
         fun setBgPrimary(color: Int): Builder {
@@ -144,9 +148,17 @@ class Biometrics(builder: Builder) {
             return this
         }
 
+        fun getBgPrimary(): Int? {
+            return colorBgPrimary
+        }
+
         fun setDefaultColor(color: Int): Builder {
             this.colorDefaultPattern = color
             return this
+        }
+
+        fun getDefaultColor(): Int? {
+            return colorDefaultPattern
         }
 
         fun setSelectedColor(color: Int): Builder {
@@ -154,9 +166,17 @@ class Biometrics(builder: Builder) {
             return this
         }
 
+        fun getSelectedColor(): Int? {
+            return colorSelectedPattern
+        }
+
         fun setErrorColor(color: Int): Builder {
             this.colorErrorPattern = color
             return this
+        }
+
+        fun getErrorColor(): Int? {
+            return colorErrorPattern
         }
 
         fun setThemeColor(color: Int): Builder {
@@ -164,20 +184,32 @@ class Biometrics(builder: Builder) {
             return this
         }
 
+        fun getThemeColor(): Int? {
+            return colorThemeAccent
+        }
+
         fun setForgetText(text: String): Builder {
             this.forgetText = text
             return this
         }
 
+        fun getForgetText(): String? {
+            return forgetText
+        }
+
         /*****************************/
-        var title: String? = null
-        var subTitle: String? = null
-        var negativeText: String? = null
-        var description: String? = null
+        private var title: String? = null
+        private var subTitle: String? = null
+        private var negativeText: String? = null
+        private var description: String? = null
 
         fun setTitle(title: String): Builder {
             this.title = title
             return this
+        }
+
+        fun getTitle(): String? {
+            return title
         }
 
         fun setSubtitle(subTitle: String): Builder {
@@ -185,14 +217,27 @@ class Biometrics(builder: Builder) {
             return this
         }
 
+        fun getSubtitle(): String? {
+            return subTitle
+        }
+
         fun setDescripton(description: String): Builder {
             this.description = description
             return this
         }
 
+
+        fun getDescripton(): String? {
+            return description
+        }
+
         fun setNegativeText(negativeText: String): Builder {
             this.negativeText = negativeText
             return this
+        }
+
+        fun getNegativeText(): String? {
+            return negativeText
         }
 
         fun build(): Biometrics {

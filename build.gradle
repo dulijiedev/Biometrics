@@ -19,6 +19,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        maven{
+            url 'https://dwww.dcpay.vip/nexus/content/repositories/releases/'
+        }
     }
 }
 
