@@ -2,10 +2,7 @@
  [![](https://jitpack.io/v/sdohubs/Biometrics.svg)](https://jitpack.io/#sdohubs/Biometrics)
 ## Example
 To run the example project, clone or download, just run it on `AndroidStudio`
-```
-iOS realize see 
-https://github.com/henryhongli/Biometrics.git
-```
+## [iOS Swift 日志工具库](https://github.com/henryhongli/Biometrics.git)
 ## Requirements
 Biometrics is code by `Kotlin` and `minSdkVersion` is 19 ,If your project is lower than the minimum version, you may get an error
 ## How to use
