@@ -74,6 +74,7 @@ object BiometricPromptApi28 : IBometricPromptImpl {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.P)
     private fun showFingerPrintDialog9(cipher: Cipher, callback: IBiometricApi) {
         val mCancellationSignal = CancellationSignal()
         val mBiometricPrompt = BiometricPrompt.Builder(UIUtils.getContext())
