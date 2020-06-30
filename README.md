@@ -104,7 +104,7 @@ BiometricsUtils.enterBiometric(this, supportFragmentManager, object : IBiometric
 
 类图：
 
-![生物识别](C:\Users\GIChain\Desktop\生物识别.png)
+![生物识别](https://github.com/sdohubs/Biometrics/blob/master/%E7%94%9F%E7%89%A9%E8%AF%86%E5%88%AB.png)
 
 ### Author
 
