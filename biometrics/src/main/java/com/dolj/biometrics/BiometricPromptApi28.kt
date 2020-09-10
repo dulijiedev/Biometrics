@@ -1,20 +1,16 @@
 package com.dolj.biometrics
 
 import android.annotation.TargetApi
-import android.content.Context
 import android.content.DialogInterface
 import android.hardware.biometrics.BiometricPrompt
 import android.os.Build
 import android.os.CancellationSignal
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
-import android.util.Log
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.FragmentManager
 import com.dolj.biometrics.bioapi.IBiometricApi
 import com.dolj.biometrics.utils.*
-import java.lang.Exception
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
@@ -25,7 +21,7 @@ import javax.crypto.SecretKey
  * @date: 2020/5/14
  * api28+
  */
-object BiometricPromptApi28 : IBometricPromptImpl {
+object BiometricPromptApi28 : IBiometricPromptImpl {
 
     @TargetApi(Build.VERSION_CODES.P)
     override fun authenticate(fragmentManager: FragmentManager?, callback: IBiometricApi) {

@@ -1,5 +1,6 @@
-package com.dolj.biometrics.ui
+@file:Suppress("DEPRECATION")
 
+package com.dolj.biometrics.ui
 import android.app.Activity
 import android.app.Dialog
 import android.content.Context
@@ -27,7 +28,7 @@ import javax.crypto.Cipher
  * @description: 添加认证弹窗
  */
 class BiometricPromptDialog private constructor(
-    val cipher: Cipher,
+    private val cipher: Cipher,
     val callback: IBiometricApi?
 ) :
     DialogFragment() {
@@ -108,9 +109,9 @@ class BiometricPromptDialog private constructor(
         val rootView = view.findViewById<RelativeLayout>(R.id.root_view)
         rootView.isClickable = false
 
-        mTitleTv = view.findViewById<TextView>(R.id.tvTitle)
+        mTitleTv = view.findViewById(R.id.tvTitle)
         mTitleTv?.text = fingerTitle
-        mSubtitleTv = view.findViewById<TextView>(R.id.tvSubtitle)
+        mSubtitleTv = view.findViewById(R.id.tvSubtitle)
         mSubtitleTv?.text = fingerSubTitle
         mStateTv = view.findViewById(R.id.state_tv)
         mNegativeBtn = view.findViewById(R.id.negative_btn)
@@ -187,10 +188,6 @@ class BiometricPromptDialog private constructor(
             else -> {
             }
         }
-    }
-
-    override fun dismiss() {
-        super.dismiss()
     }
 
     private fun startListening(cipher: Cipher) {

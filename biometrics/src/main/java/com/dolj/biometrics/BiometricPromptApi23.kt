@@ -1,22 +1,14 @@
 package com.dolj.biometrics
 
 import android.annotation.TargetApi
-import android.app.Activity
-import android.content.ContentValues.TAG
-import android.hardware.fingerprint.FingerprintManager
 import android.os.Build
-import android.os.CancellationSignal
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.hardware.fingerprint.FingerprintManagerCompat
 import androidx.fragment.app.FragmentManager
 import com.dolj.biometrics.bioapi.IBiometricApi
 import com.dolj.biometrics.ui.BiometricPromptDialog
 import com.dolj.biometrics.utils.DEFAULT_KEY_NAME
 import com.dolj.biometrics.utils.UIUtils
-import java.lang.Exception
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
@@ -27,7 +19,7 @@ import javax.crypto.SecretKey
  * @date: 2020/5/14
  * @description: api23以下
  */
-object BiometricPromptApi23 : IBometricPromptImpl {
+object BiometricPromptApi23 : IBiometricPromptImpl {
 
     override fun authenticate(fragmentManager: FragmentManager?, callback: IBiometricApi) {
         if (UIUtils.isSupportFingerprint(UIUtils.getContext())) {

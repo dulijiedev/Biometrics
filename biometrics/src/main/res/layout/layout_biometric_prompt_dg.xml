@@ -43,6 +43,7 @@
             <ImageView
                 android:layout_width="54dp"
                 android:layout_height="54dp"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_fingerprint" />
 
             <TextView

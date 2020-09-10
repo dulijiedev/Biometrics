@@ -31,7 +31,7 @@ dependencies {
 ```css
 	Biometrics.Builder(this)
             .setFontSecondary(resources.getColor(R.color.colorAccent))
-            .setBgPrimary(resources.getColor(R.color.bgPrimart))
+            .setBgPrimary(resources.getColor(R.color.bgPrimary))
             .setDefaultColor(resources.getColor(R.color.colorAccent))
             .setSelectedColor(resources.getColor(R.color.colorPrimary))
             .setErrorColor(resources.getColor(R.color.colorAccent))

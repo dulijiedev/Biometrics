@@ -2,6 +2,7 @@ package com.dolj.biometrics.gesture
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.dolj.biometrics.BiometricsUtils
 import com.dolj.biometrics.R
 import com.dolj.biometrics.utils.bgPrimary
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.gesture_check_at.*
  */
 class GestureCheckAt : AppCompatActivity(), LockPatternView.OnPatternListener {
 
-    private val DELAYTIME = 600L
+    private val _delayTime = 600L
     private var count = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,13 +61,13 @@ class GestureCheckAt : AppCompatActivity(), LockPatternView.OnPatternListener {
      */
     private fun updateStatus(status: StatusCheck) {
         tv_check_tips.setText(status.strId)
-        tv_check_tips.setTextColor(resources.getColor(status.colorId))
+        tv_check_tips.setTextColor(ContextCompat.getColor(this,status.colorId))
         when (status) {
             StatusCheck.DEFAULT -> lockPatternView.setPattern(LockPatternView.DisplayMode.DEFAULT)
             StatusCheck.ERROR -> {
                 count++
                 lockPatternView.setPattern(LockPatternView.DisplayMode.ERROR)
-                lockPatternView.postClearPatternRunnable(DELAYTIME)
+                lockPatternView.postClearPatternRunnable(_delayTime)
                 if (count >= 5) {
 //                    Toast.makeText(this, R.string.check_error_over_time, Toast.LENGTH_SHORT).show()
                     gesturePwd = ""

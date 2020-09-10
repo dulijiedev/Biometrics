@@ -2,6 +2,7 @@ package com.dolj.biometrics.gesture
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.dolj.biometrics.BiometricsUtils
 import com.dolj.biometrics.R
 import com.dolj.biometrics.utils.bgPrimary
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.gesture_set_at.*
 class GestureSetAt : AppCompatActivity(), LockPatternView.OnPatternListener {
 
     private var mChosenPattern: List<LockPatternView.Cell>? = null
-    private val DELAYTIME = 600L
+    private val _delayTime = 600L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +62,7 @@ class GestureSetAt : AppCompatActivity(), LockPatternView.OnPatternListener {
      * @param pattern
      */
     private fun updateStatus(status: StatusSet, pattern: List<LockPatternView.Cell>) {
-        tv_set_tip.setTextColor(resources.getColor(status.colorId))
+        tv_set_tip.setTextColor(ContextCompat.getColor(this,status.colorId))
         tv_set_tip.setText(status.strId)
         when (status) {
             StatusSet.DEFAULT -> lockPatternView.setPattern(LockPatternView.DisplayMode.DEFAULT)
@@ -69,7 +70,7 @@ class GestureSetAt : AppCompatActivity(), LockPatternView.OnPatternListener {
             StatusSet.LESSERROR -> lockPatternView.setPattern(LockPatternView.DisplayMode.DEFAULT)
             StatusSet.CONFIRMERROR -> {
                 lockPatternView.setPattern(LockPatternView.DisplayMode.ERROR)
-                lockPatternView.postClearPatternRunnable(DELAYTIME)
+                lockPatternView.postClearPatternRunnable(_delayTime)
             }
             StatusSet.CONFIRMCORRECT -> {
                 saveChosenPattern(pattern)

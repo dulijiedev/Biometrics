@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.dolj.biometrics.utils
 
 import android.app.KeyguardManager
@@ -31,7 +33,7 @@ object UIUtils {
         } else {
             val keyguardManager = context.getSystemService(KeyguardManager::class.java)
             val fingerprintManager = FingerprintManagerCompat.from(context)
-            if (!fingerprintManager!!.isHardwareDetected) {
+            if (!fingerprintManager.isHardwareDetected) {
                 Toast.makeText(context, "您的手机不支持指纹功能！", Toast.LENGTH_SHORT).show()
                 return false
             } else if (!keyguardManager!!.isKeyguardSecure) {
@@ -51,7 +53,7 @@ object UIUtils {
         } else {
             val keyguardManager = context.getSystemService(KeyguardManager::class.java)
             val fingerprintManager = FingerprintManagerCompat.from(context)
-            if (!fingerprintManager!!.isHardwareDetected) {
+            if (!fingerprintManager.isHardwareDetected) {
                 return false
             } else if (!keyguardManager!!.isKeyguardSecure) {
                 return false
